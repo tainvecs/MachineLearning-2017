@@ -1,4 +1,4 @@
-## Environment 
+## Environment
 * Ubuntu 18.04
 * Python 3.6.8
 * numpy 1.16.0, pandas 0.24.0, matplotlib 3.0.2
@@ -16,7 +16,7 @@ Before deep learning models, we may start from regression models. A Regression m
 
 ## Dataset
 
-The dataset consist of 18 different air pollution sources collected at Fengyuan air pollution observatory in Taiwan. 
+The dataset consist of 18 different air pollution sources collected at Fengyuan air pollution observatory in Taiwan.
 
 * **Training Data**
 	- /data/train.csv
@@ -27,7 +27,7 @@ The dataset consist of 18 different air pollution sources collected at Fengyuan 
 	- /data/test.csv
 	- Test data is extracted from the last 10 days data in each month of an year.
 	- Given data of 9 continuous hours, we have to predict the value of air pollution source PM2.5 in next hour.
-	
+
 
 ## Linear Regression Model
 
@@ -39,7 +39,7 @@ The dataset consist of 18 different air pollution sources collected at Fengyuan 
 	- path of test data
 	- If specified, prediction will be output to **--out_predict**.
 * **--validate** (float or int)
-	- float 0~1: the proportions of validation set split from training dataset 
+	- float 0~1: the proportions of validation set split from training dataset
 	- int > 1: number of validation data slice from training dataset
 	- validation data should not be more than 30\% of training dataset
 * **--in_model** (str)
@@ -96,16 +96,14 @@ The dataset consist of 18 different air pollution sources collected at Fengyuan 
 
 * Adam optimizer with small batch size and large learning rate results in considerable increase on RMSE.
 
-
 * **Adam Optimizer**
 	- **eta**: 0.01, **l2_lambda**: 0.01, **iter_n**: 10000
 	- **beta_m**: 0.9, **beta_v**: 0.999
-	- **batch_size**: 10, 50, 100, 500, 1000 
+	- **batch_size**: 10, 50, 100, 500, 1000
 
 ![](https://github.com/tainvecs/ml-2017/blob/master/hw1/png/adam-batch_size-eta_0.01_l2_lambda_0.01.png?raw=true)
 
 * On the contrary, a smaller learning rate shows more stable performance on RMSE.
-
 
 * **Ada Gradient**
 	- **batch_size**: 50, **l2_lambda**: 0.01, **iter_n**: 10000
@@ -115,18 +113,17 @@ The dataset consist of 18 different air pollution sources collected at Fengyuan 
 
 * In contrast, a too small learning rate using ada gradient leads to great RMSE increase.
 
-
 * **Adam Optimizer**
 	- **eta**: 0.01, **batch_size**: 50, **iter_n**: 10000
 	- **beta_m**: 0.9, **beta_v**: 0.999
 	- **l2_lambda**: 1e-4, 1e-3, 1e-2, 1e-1, 1
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw1/png/adam-l2_lambda-eta_0.01_batch_size_50.png)
+![](https://github.com/tainvecs/ml-2017/blob/master/hw1/png/adam-l2_lambda-eta_0.01_batch_size_50.png?raw=true)
 
 * **Ada Gradient**
 	- **eta**: 0.01, **batch_size**: 50, **iter_n**: 10000
 	- **l2_lambda**: 1e-4, 1e-3, 1e-2, 1e-1, 1
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw1/png/ada-l2_lambda-eta_0.01_batch_size_50.png)
+![](https://github.com/tainvecs/ml-2017/blob/master/hw1/png/ada-l2_lambda-eta_0.01_batch_size_50.png?raw=true)
 
 * The L2 regularization lambda does not shows significant influence on RMSE validation value in this task, no matter with adam optimizer or ada gradient.
