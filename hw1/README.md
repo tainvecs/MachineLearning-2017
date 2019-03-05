@@ -127,3 +127,14 @@ The dataset consist of 18 different air pollution sources collected at Fengyuan 
 
 ![](https://github.com/tainvecs/ml-2017/blob/master/hw1/png/ada-l2_lambda-eta_0.01_batch_size_50.png?raw=true)
 * The L2 regularization lambda does not shows significant influence on RMSE validation value in this task, no matter with adam optimizer or ada gradient.
+
+
+## Reference
+
+
+* [Linear Regression Slide](http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Logistic%20Regression%20(v3).pdf)
+* [Gradient Descent Slide](http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Gradient%20Descent%20(v2).pdf)
+* [Machine Learning: Regularization](https://murphymind.blogspot.com/2017/05/machine.learning.regularization.html)
+* [Machine Learning note: SGD, Momentum, AdaGrad, Adam Optimizer](https://medium.com/%E9%9B%9E%E9%9B%9E%E8%88%87%E5%85%94%E5%85%94%E7%9A%84%E5%B7%A5%E7%A8%8B%E4%B8%96%E7%95%8C/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92ml-note-sgd-momentum-adagrad-adam-optimizer-f20568c968db)
+* [Beyond SGD: Gradient Descent with Momentum and Adaptive Learning Rate](https://wiseodd.github.io/techblog/2016/06/22/nn-optimization/)
+* [Early Stopping Implementation](https://gist.github.com/ryanpeach/9ef833745215499e77a2a92e71f89ce2)
