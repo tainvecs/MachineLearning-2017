@@ -307,7 +307,7 @@ def __output_log(log, out_path):
 class LinearRegression():
 
 
-    def __init__(self, iter_n=10000, random_seed=None, batch_size=50, eta=0.01, l2_lambda=0.001,
+    def __init__(self, iter_n=10000, batch_size=50, eta=0.01, l2_lambda=0.001,
                  optimizer='adam', beta_m=0.9, beta_v=0.999, epsilon=1e-8, early_stop=True):
 
         self.iter_n = int(iter_n)
