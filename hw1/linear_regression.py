@@ -13,7 +13,7 @@ DEFAULT_TRAIN = './data/train.csv'
 DEFAULT_TEST = './data/test.csv'
 DEFAULT_VAL = 500
 DEFAULT_SEED = None
-DEFAULT_ITER_N = 10000
+DEFAULT_EPOCH = 10000
 DEFAULT_BATCH = 50
 DEFAULT_ETA = 0.01
 DEFAULT_LAMBDA = 0.001
@@ -36,8 +36,8 @@ def ParseArgs():
     parser.add_argument('--in_model', help='path of the model to load')
 
     parser.add_argument('--random_seed', help='random seed for splitting training and validation data')
-    parser.add_argument('--iter_n', help='number of training iteration')
-    parser.add_argument('--batch_size', help='sgd batch size')
+    parser.add_argument('--epoch', help='number of training epoch')
+    parser.add_argument('--batch_size', help='sgd mini batch size')
     parser.add_argument('--eta', help='learning rate')
     parser.add_argument('--l2_lambda', help='l2 norm lambda value')
     parser.add_argument('--optimizer', help='option: \"adam\", \"ada\"')
@@ -75,10 +75,10 @@ def ParseArgs():
     else:
         args.random_seed = DEFAULT_SEED
 
-    if args.iter_n:
-        args.iter_n = int(args.iter_n)
+    if args.epoch:
+        args.epoch = int(args.epoch)
     else:
-        args.iter_n = DEFAULT_ITER_N
+        args.epoch = DEFAULT_EPOCH
 
     if args.batch_size:
         args.batch_size = int(args.batch_size)
@@ -142,7 +142,7 @@ def ParseArgs():
         opt_str = "{}_batam{}_betav{}".format(args.optimizer, args.beta_m, args.beta_v)
     elif args.optimizer == 'ada':
         opt_str = args.optimizer
-    args.args_str = 'iter{}_early{}_val{}_seed{}_batch{}_eta{}_labmda{}_opt-{}_epsilon{}'.format(args.iter_n,
+    args.args_str = 'epoch{}_early{}_val{}_seed{}_batch{}_eta{}_labmda{}_opt-{}_epsilon{}'.format(args.epoch,
         args.early_stop, args.validate, args.random_seed, args.batch_size, args.eta, args.l2_lambda, opt_str, args.epsilon)
 
     if not args.out_model:
@@ -307,10 +307,10 @@ def __output_log(log, out_path):
 class LinearRegression():
 
 
-    def __init__(self, iter_n=10000, batch_size=50, eta=0.01, l2_lambda=0.001,
+    def __init__(self, epoch=10000, batch_size=50, eta=0.01, l2_lambda=0.001,
                  optimizer='adam', beta_m=0.9, beta_v=0.999, epsilon=1e-8, early_stop=True):
 
-        self.iter_n = int(iter_n)
+        self.epoch = int(epoch)
         self.batch_size = int(batch_size)
         self.eta = float(eta)
         self.l2_lambda = float(l2_lambda)
@@ -404,7 +404,7 @@ class LinearRegression():
         patience_n = DEFAULT_EARLY_STOP_N
 
         # training process
-        for iter_i in range(self.iter_n):
+        for epoch_i in range(self.epoch):
 
             # split sgd mini batch
             x_train_batch_list, y_train_batch_list = self.__sgd_shuffle_batch(x_train, y_train)
@@ -443,14 +443,14 @@ class LinearRegression():
             # RMSE_info
             cost = cost_sum / len(x_train_batch_list)
             RMSE_train = RMSE_train_sum / len(x_train_batch_list)
-            RMSE_val_info = 'Iteration {}, Cost {:.4f}, Train RMSE {:.4f}, Validation RMSE {:.4f}'.format(
-                iter_i, cost, RMSE_train, RMSE_val)
+            RMSE_val_info = 'Epoch {}, Cost {:.4f}, Train RMSE {:.4f}, Validation RMSE {:.4f}'.format(
+                epoch_i, cost, RMSE_train, RMSE_val)
 
-            if (iter_i %10 == 0):
+            if (epoch_i %10 == 0):
                 print (RMSE_val_info, end='\r')
 
             # early stop
-            if (self.early_stop) and (iter_i > int(0.5*self.iter_n)):
+            if (self.early_stop) and (epoch_i > int(0.5*self.epoch)):
 
                 if (RMSE_val < RMSE_val_best):
                     patience_n = DEFAULT_EARLY_STOP_N
@@ -475,7 +475,7 @@ class LinearRegression():
         self.rmse = RMSE_val_best
         self.rmse_str = RMSE_val_best_info
 
-        print ('Best of {} iterations: '.format(iter_i)+RMSE_val_best_info)
+        print ('Best of {} Epochs: '.format(epoch_i)+RMSE_val_best_info)
 
 
         return self.w, self.b, self.model
@@ -505,7 +505,7 @@ if __name__ == '__main__':
 
 
     linear_reg_model = LinearRegression(
-        iter_n=args.iter_n, random_seed=args.random_seed, batch_size=args.batch_size, eta=args.eta, l2_lambda=args.l2_lambda,
+        epoch=args.epoch, batch_size=args.batch_size, eta=args.eta, l2_lambda=args.l2_lambda,
         optimizer=args.optimizer, beta_m=args.beta_m, beta_v=args.beta_v, epsilon=args.epsilon, early_stop = args.early_stop
     )
 

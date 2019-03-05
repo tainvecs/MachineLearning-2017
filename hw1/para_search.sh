@@ -19,7 +19,7 @@ if true ; then
                     --train ./data/train.csv \
                     --validate 500 \
                     --random_seed 1234 \
-                    --iter_n 10000 \
+                    --epoch 10000 \
                     --batch_size $batch_size \
                     --eta $eta \
                     --l2_lambda $l2_lambda \
@@ -64,7 +64,7 @@ if true ; then
                     --train ./data/train.csv \
                     --validate 500 \
                     --random_seed 1234 \
-                    --iter_n 10000 \
+                    --epoch 10000 \
                     --batch_size $batch_size \
                     --eta $eta \
                     --l2_lambda $l2_lambda \

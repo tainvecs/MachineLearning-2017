@@ -46,10 +46,10 @@ The dataset consist of 18 different air pollution sources collected at Fengyuan 
 	- path of the model to load
 * **--random_seed** (int)
 	- random seed for splitting training and validation data
-* **--iter_n** (int)
-	- number of training iteration
+* **--epoch** (int)
+	- number of training epoch
 * **--batch_size** (int)
-	- sgd batch size
+	- sgd mini batch size
 * **--eta** (float)
 	- learning rate
 * **--l2_lambda** (float)
@@ -88,7 +88,7 @@ The dataset consist of 18 different air pollution sources collected at Fengyuan 
 ## Parameters
 
 * **Adam Optimizer**
-	- **eta**: 10, **l2_lambda**: 0.01, **iter_n**: 10000
+	- **eta**: 10, **l2_lambda**: 0.01, **epoch**: 10000
 	- **beta_m**: 0.9, **beta_v**: 0.999
 	- **batch_size**: 10, 50, 100, 500, 1000
 
@@ -97,7 +97,7 @@ The dataset consist of 18 different air pollution sources collected at Fengyuan 
 
 
 * **Adam Optimizer**
-	- **eta**: 0.01, **l2_lambda**: 0.01, **iter_n**: 10000
+	- **eta**: 0.01, **l2_lambda**: 0.01, **epoch**: 10000
 	- **beta_m**: 0.9, **beta_v**: 0.999
 	- **batch_size**: 10, 50, 100, 500, 1000
 
@@ -106,7 +106,7 @@ The dataset consist of 18 different air pollution sources collected at Fengyuan 
 
 
 * **Ada Gradient**
-	- **batch_size**: 50, **l2_lambda**: 0.01, **iter_n**: 10000
+	- **batch_size**: 50, **l2_lambda**: 0.01, **epoch**: 10000
 	- **eta**: 1e-4, 1e-3, 1e-2, 1e-1, 1, 10
 
 ![](https://github.com/tainvecs/ml-2017/blob/master/hw1/png/ada-eta-batch_size_50_l2_lambda_0.01.png?raw=true)
@@ -114,7 +114,7 @@ The dataset consist of 18 different air pollution sources collected at Fengyuan 
 
 
 * **Adam Optimizer**
-	- **eta**: 0.01, **batch_size**: 50, **iter_n**: 10000
+	- **eta**: 0.01, **batch_size**: 50, **epoch**: 10000
 	- **beta_m**: 0.9, **beta_v**: 0.999
 	- **l2_lambda**: 1e-4, 1e-3, 1e-2, 1e-1, 1
 
@@ -122,7 +122,7 @@ The dataset consist of 18 different air pollution sources collected at Fengyuan 
 
 
 * **Ada Gradient**
-	- **eta**: 0.01, **batch_size**: 50, **iter_n**: 10000
+	- **eta**: 0.01, **batch_size**: 50, **epoch**: 10000
 	- **l2_lambda**: 1e-4, 1e-3, 1e-2, 1e-1, 1
 
 ![](https://github.com/tainvecs/ml-2017/blob/master/hw1/png/ada-l2_lambda-eta_0.01_batch_size_50.png?raw=true)
