@@ -52,13 +52,7 @@ def ParseArgs():
     parser.add_argument('--debug', help='option: true or false')
 
     args = parser.parse_args()
-
-
-    if not args.train:
-        args.train = DEFAULT_TRAIN
-
-    if not args.test:
-        args.test = DEFAULT_TEST
+    
 
     if args.validate:
         if re.match(r'[0-9]*$', args.validate):
