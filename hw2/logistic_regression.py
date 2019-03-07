@@ -504,7 +504,7 @@ if __name__ == '__main__':
 
         # output log
         #log_str = "Args String: {}\nBest Accuracy: {}\n\n".format(args.args_str, logistic_reg_model.performance_str)
-        log_str = "{}, {}, {}, {}, {}, {}\n".format(
+        log_str = "{},{},{},{},{},{}\n".format(
             args.optimizer, args.norm, args.batch_size, args.l2_lambda, args.eta, logistic_reg_model.accuracy)
         if args.debug:
             print ("\n############# Ouptut Training Log #############")

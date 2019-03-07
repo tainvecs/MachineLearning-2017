@@ -530,7 +530,7 @@ if __name__ == '__main__':
 
         # output log
         #log_str = "Args String: {}\nBest RMSE: {}\n\n".format(args.args_str, linear_reg_model.rmse_str)
-        log_str = "{}, {}, {}, {}\n".format(args.batch_size, args.l2_lambda, args.eta, linear_reg_model.rmse)
+        log_str = "{},{},{},{}\n".format(args.batch_size, args.l2_lambda, args.eta, linear_reg_model.rmse)
         __output_log(log_str, args.out_log)
         if args.debug:
             print ("\n############# Ouptut Training Log #############")

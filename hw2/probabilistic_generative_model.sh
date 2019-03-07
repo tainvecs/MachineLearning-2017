@@ -6,5 +6,5 @@ python3 probabilistic_generative_model.py \
     --random_seed 1234 \
     --norm standard \
     --test_x ./feature/X_test \
-    --out_predict ./tmp.out.csv \
+    --out_predict ./output/standard.csv \
     --debug true
