@@ -52,7 +52,7 @@ def ParseArgs():
     parser.add_argument('--debug', help='option: true or false')
 
     args = parser.parse_args()
-    
+
 
     if args.validate:
         if re.match(r'[0-9]*$', args.validate):
@@ -289,8 +289,9 @@ def __split_validate(train_x, train_y, validate_n, seed=None, debug=True):
 def __save_prediction(prediction, out_path):
 
     with open(out_path, 'w') as out_file:
-        for num in prediction:
-            out_file.write("{}\n".format(num))
+        out_file.write("id,value\n")
+        for i, num in enumerate(prediction):
+            out_file.write("id_{},{}\n".format(i, num))
 
 
 def __output_log(log, out_path):
