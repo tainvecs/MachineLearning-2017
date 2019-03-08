@@ -144,16 +144,16 @@ Predict whether income exceeds $50K/yr based on census data. Also known as "Cens
 
 | Optimizer | Feature <br> Normalization | Mini Batch Size | L2 Regularization <br> Lambda | Eta |   Accuracy <br> (Validation) |
 | :---: | :------: | -----: | ------: |--------- | ----------: |
-|  adam | standard |     10 |   0.001 |       0.1 |  0.855037 | 
-|  adam |  min_max |     10 |   0.001 |       0.1 |  0.846437 | 
-|  adam |     mean |     10 |   0.001 |       0.1 |  0.845209 | 
+|  adam | standard |     10 |   0.001 |       0.1 |  0.855037 |
+|  adam |  min_max |     10 |   0.001 |       0.1 |  0.846437 |
+|  adam |     mean |     10 |   0.001 |       0.1 |  0.845209 |
 |  adam |     none |     10 |   0.001 |       0.1 |  0.819717 |
 
 | Optimizer | Feature <br> Normalization | Mini Batch Size | L2 Regularization <br> Lambda | Eta |   Accuracy <br> (Validation) |
 | :---: | :------: | -----: | ------: | --------- | ----------: |
-|  adam | standard |     10 |   0.001 |       0.0001 |  0.851658 | 
-|  adam |  min_max |     10 |   0.001 |       0.0001 |  0.842752 | 
-|  adam |     mean |     10 |   0.001 |       0.0001 |  0.841523 | 
+|  adam | standard |     10 |   0.001 |       0.0001 |  0.851658 |
+|  adam |  min_max |     10 |   0.001 |       0.0001 |  0.842752 |
+|  adam |     mean |     10 |   0.001 |       0.0001 |  0.841523 |
 |  adam |     none |     10 |   0.001 |       0.0001 |  0.850737 |
 
 * As the tables shown, training with standard score normalized features gets better validation accuracy than none normalized features.
@@ -161,9 +161,11 @@ Predict whether income exceeds $50K/yr based on census data. Also known as "Cens
 
 ![](https://github.com/tainvecs/ml-2017/blob/master/hw2/png/eta-opt_adam_l2_lambda_0.001_batch_size_10_norm_standard.png?raw=true)
 * Learning rate eta tested with 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1 and 10.
+* Optimizer: adam, Feature Normalization: standard, Mini Batch Size: 10, L2 Regularization Lambda: 0.001
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw2/png/l2_lambda-opt_adam_eta_0.001_batch_size_10_norm_standard.png?raw=true)
+![](https://github.com/tainvecs/ml-2017/blob/master/hw2/png/l2_lambda-opt_adam_eta_0.1_batch_size_10_norm_standard.png?raw=true)
 * L2 regularization lambda tested with 1e-4, 1e-3, 1e-2 and 1e-1.
+* Optimizer: adam, Feature Normalization: standard, Mini Batch Size: 10, Learning Rate Eta: 0.1
 
 
 * **Probabilistic Generative model**
@@ -181,4 +183,3 @@ Predict whether income exceeds $50K/yr based on census data. Also known as "Cens
 * [Machine Learning note: SGD, Momentum, AdaGrad, Adam Optimizer](https://medium.com/%E9%9B%9E%E9%9B%9E%E8%88%87%E5%85%94%E5%85%94%E7%9A%84%E5%B7%A5%E7%A8%8B%E4%B8%96%E7%95%8C/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92ml-note-sgd-momentum-adagrad-adam-optimizer-f20568c968db)
 * [Beyond SGD: Gradient Descent with Momentum and Adaptive Learning Rate](https://wiseodd.github.io/techblog/2016/06/22/nn-optimization/)
 * [Early Stopping Implementation](https://gist.github.com/ryanpeach/9ef833745215499e77a2a92e71f89ce2)
-

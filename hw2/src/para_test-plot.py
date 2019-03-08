@@ -64,7 +64,7 @@ if __name__ == '__main__':
     save_path = args.out_dir+'/eta-opt_{}_l2_lambda_{}_batch_size_{}_norm_{}.png'.format('adam', 0.001, 10, 'standard') 
     eta = lr[(lr.opt == 'adam')&(lr.batch == 10)&(lr.l2_lambda == 0.001)&(lr.norm == 'standard')]\
         .sort_values(by=['eta'], ascending=False).reset_index(drop=True)
-    plot_figure(eta['eta'], eta['acc'], 'L2 Regularization Lambda', 'Accuracy (Validation)', title=None, 
+    plot_figure(eta['eta'], eta['acc'], 'Learning Rate (eta)', 'Accuracy (Validation)', title=None, 
                 x_lim=None, y_lim=[0.835, 0.856], x_log_scale = True, y_log_scale = False, 
                 show=False, save_path=save_path)
     
