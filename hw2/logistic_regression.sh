@@ -7,9 +7,9 @@ python3 logistic_regression.py \
     --validate 0.1 \
     --random_seed 1234 \
     --epoch 1000 \
-    --batch_size 50 \
-    --eta 0.1 \
-    --l2_lambda 0.0001 \
+    --batch_size 10 \
+    --eta 0.001 \
+    --l2_lambda 0.1 \
     --optimizer 'adam' \
     --beta_m 0.9 \
     --beta_v 0.999 \

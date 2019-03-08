@@ -30,7 +30,7 @@ def ParseArgs():
 
     parser.add_argument('--train_feature', help='path of training feature; If both --train_feature and --train_answer are specified, new model will be trained and output.')
     parser.add_argument('--train_answer', help='path of training ground truth; If both --train_feature and --train_answer are specified, new model will be trained and output.')
-    parser.add_argument('--test_feature', help='path of test data; IIf specified, prediction will be output to --out_predict.')
+    parser.add_argument('--test_feature', help='path of test feature; If specified, prediction will be output to --out_predict.')
     parser.add_argument('--test_answer', help='path of test answer')
     parser.add_argument('--validate', help='float 0~1: the proportions of validation set split from training dataset; int > 1: number of validation data slice from training dataset; validation data should not be more than 30\% of training dataset')
     parser.add_argument('--in_model', help='path of the model to load')
@@ -44,12 +44,12 @@ def ParseArgs():
     parser.add_argument('--beta_m', help='bata value of momentum; The value should be specified if the optimizer is \"adam\".')
     parser.add_argument('--beta_v', help='bata value of velocity; The value should be specified if the optimizer is \"adam\".')
     parser.add_argument('--epsilon', help='The small value for avoiding divide by zero error while calculating gradient.')
-    parser.add_argument('--norm', help='feature nomalization option: none, standard, min_max, mean')
+    parser.add_argument('--norm', help='feature normalization option: none, standard, min_max, mean')
     parser.add_argument('--early_stop', help='early stopping: true or false')
 
     parser.add_argument('--out_log', help='path to output log file')
     parser.add_argument('--out_model', help='path to output model')
-    parser.add_argument('--out_predict', help='path of test prediction')
+    parser.add_argument('--out_predict', help='path to output test prediction')
     parser.add_argument('--debug', help='option: true or false')
 
     args = parser.parse_args()

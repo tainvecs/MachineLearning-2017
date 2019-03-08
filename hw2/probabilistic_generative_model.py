@@ -21,10 +21,10 @@ def ParseArgs():
     parser.add_argument('--train_y', help='path of training ground truth')
     parser.add_argument('--validate', help='float 0~1: the proportions of validation set split from training dataset; int > 1: number of validation data slice from training dataset; validation data should not be more than 30\% of training dataset')
     parser.add_argument('--random_seed', help='random seed for splitting training and validation data')
-    parser.add_argument('--norm', help='feature nomalization option: none, standard, min_max, mean')
-    parser.add_argument('--test_x', help='path of training ground truth')
+    parser.add_argument('--norm', help='feature normalization option: none, standard, min_max, mean')
+    parser.add_argument('--test_x', help='path of test feature')
     parser.add_argument('--test_y', help='path of test answer')
-    parser.add_argument('--out_predict', help='path of test prediction')
+    parser.add_argument('--out_predict', help='path to output test prediction')
     parser.add_argument('--debug', help='option: true or false')
 
     args = parser.parse_args()
