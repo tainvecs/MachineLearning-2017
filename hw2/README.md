@@ -142,14 +142,14 @@ Predict whether income exceeds $50K/yr based on census data. Also known as "Cens
 	- The following tables shows part of the validation result.
 
 
-| Optimizer | Feature <br> Normalization | Mini Batch Size | L2 Regularization <br> Lambda | Eta |   Accuracy <br> (Validation) |
+| Optimizer | Feature Normalization | Mini Batch Size | L2 Regularization Lambda | Eta |   Accuracy (Validation) |
 | :---: | :------: | -----: | ------: |--------- | ----------: |
 |  adam | standard |     10 |   0.001 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1 |  0.855037 |
 |  adam |  min_max |     10 |   0.001 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1 |  0.846437 |
 |  adam |     mean |     10 |   0.001 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1 |  0.845209 |
 |  adam |     none |     10 |   0.001 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1 |  0.819717 |
 
-| Optimizer | Feature <br> Normalization | Mini Batch Size | L2 Regularization <br> Lambda | Eta |   Accuracy <br> (Validation) |
+| Optimizer | Feature Normalization | Mini Batch Size | L2 Regularization Lambda | Eta |   Accuracy (Validation) |
 | :---: | :------: | -----: | ------: | --------- | ----------: |
 |  adam | standard |     10 |   0.001 |       0.0001 |  0.851658 |
 |  adam |  min_max |     10 |   0.001 |       0.0001 |  0.842752 |
