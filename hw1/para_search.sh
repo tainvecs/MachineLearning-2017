@@ -46,7 +46,7 @@ fi
 
 
 # ada
-if true ; then
+if false ; then
 
     for batch_size in 10 50 100 500 1000;
     do

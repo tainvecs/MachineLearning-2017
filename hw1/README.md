@@ -11,7 +11,7 @@
 
 
 ## Overview
-Before deep learning models, we may start from the linear regression model. A linear Regression model can be viewed as a shallow neural network model with single hidden layer. In the first homework of ml-2017, we are asked to implement a linear regression model and solve a regression problem.
+Before deep learning models, we may start from the linear regression model. A linear Regression model can be viewed as a single neuron with linear activation function. In the first homework of ml-2017, we are asked to implement a linear regression model and solve a regression problem.
 
 
 ## Dataset

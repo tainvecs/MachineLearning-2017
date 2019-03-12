@@ -349,7 +349,7 @@ class LinearRegression():
         return (loss_square + self.l2_lambda*np.sum(w**2)) / (2 * data_n)
 
 
-    def __sgd_batch_gradient(self, x, w, loss, data_n):
+    def __sgd_batch_gradient(self, x, w, loss, data_n, iter_i):
 
         gradient = (np.dot(x.T, loss) + self.l2_lambda*w) / data_n
 
@@ -358,8 +358,8 @@ class LinearRegression():
             self.momentum = self.beta_m*self.momentum + (1-self.beta_m)*gradient
             self.velocity = self.beta_v*self.velocity + (1-self.beta_v)*(gradient**2)
 
-            momentum_hat = self.momentum / (1-self.beta_m)
-            velocity_hat = self.velocity / (1-self.beta_v)
+            momentum_hat = self.momentum / (1-self.beta_m**iter_i)
+            velocity_hat = self.velocity / (1-self.beta_v**iter_i)
 
             adam_gradient = self.eta * momentum_hat / (np.sqrt(velocity_hat) + self.epsilon)
 
@@ -406,8 +406,9 @@ class LinearRegression():
 
             RMSE_train_sum = 0
             cost_sum = 0
-            for x_train_batch, y_train_batch in zip(x_train_batch_list, y_train_batch_list):
+            for i, (x_train_batch, y_train_batch) in enumerate(zip(x_train_batch_list, y_train_batch_list)):
 
+                iter_i = (epoch_i*len(x_train_batch_list)) + (i+1)
                 data_n_train = x_train_batch.shape[0]
 
                 # mask of the bias term
@@ -425,7 +426,7 @@ class LinearRegression():
                 RMSE_train_sum += self.__RMSE(loss_square_train, data_n_train)
 
                 # calculate gradient
-                gradient = self.__sgd_batch_gradient(x_train_batch, (wb+b_mask), loss_train, data_n_train)
+                gradient = self.__sgd_batch_gradient(x_train_batch, (wb+b_mask), loss_train, data_n_train, iter_i)
 
                 # update
                 wb = wb - gradient

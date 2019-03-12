@@ -59,59 +59,61 @@ if __name__ == '__main__':
 
 
     # input
-    adam = pd.read_csv(args.adam_log)
-    ada = pd.read_csv(args.ada_log)
+    if args.adam_log:
+
+        adam = pd.read_csv(args.adam_log)
+
+        # adam
+        # eta == 10, l2_lambda == 0.01, batch_size: 10, 50, 100, 500, 1000
+
+        adam_slice = adam[(adam.eta == 10)&(adam.l2_lambda == 0.01)].sort_values(by=['batch_size'])
+        y = adam_slice.reset_index(drop=True, inplace=False).rmse_val
+        x = adam_slice.reset_index(drop=True, inplace=False).batch_size
+        save_path = args.out_dir+'/adam-batch_size-eta_{}_l2_lambda_{}.png'.format(10, 0.01)
+        plot_figure(x, y, x_label='Batch Size', y_label='RMSE (Validation)', title="Adam Optimizer",
+                    x_log_scale=True, y_lim=(0, 80), save_path=save_path)
+
+        # adam
+        # eta == 0.01, l2_lambda == 0.01, batch_size: 10, 50, 100, 500, 1000
+
+        adam_slice = adam[(adam.eta == 0.01)&(adam.l2_lambda == 0.01)].sort_values(by=['batch_size'])
+        y = adam_slice.reset_index(drop=True, inplace=False).rmse_val
+        x = adam_slice.reset_index(drop=True, inplace=False).batch_size
+        save_path = args.out_dir+'/adam-batch_size-eta_{}_l2_lambda_{}.png'.format(0.01, 0.01)
+        plot_figure(x, y, x_label='Batch Size', y_label='RMSE (Validation)', title="Adam Optimizer",
+                    x_log_scale=True, y_lim=(5, 6), save_path=save_path)
+
+        # adam
+        # eta == 0.01, batch_size == 50, l2_lambda: 1e-4, 1e-3, 1e-2, 1e-1, 1, 10
+
+        adam_slice = adam[(adam.eta == 0.01)&(adam.batch_size == 50)&(adam.l2_lambda != 0)].sort_values(by=['l2_lambda'])
+        y = adam_slice.reset_index(drop=True, inplace=False).rmse_val
+        x = adam_slice.reset_index(drop=True, inplace=False).l2_lambda
+        save_path = args.out_dir+'/adam-l2_lambda-eta_{}_batch_size_{}.png'.format(0.01, 50)
+        plot_figure(x, y, x_label='L2 Lambda', y_label='RMSE (Validation)', title="Adam Optimizer",
+                    y_lim=(5, 6), x_log_scale=True, save_path=save_path)
 
 
-    # adam
-    # eta == 10, l2_lambda == 0.01, batch_size: 10, 50, 100, 500, 1000
+    if args.ada_log:
 
-    adam_slice = adam[(adam.eta == 10)&(adam.l2_lambda == 0.01)].sort_values(by=['batch_size'])
-    y = adam_slice.reset_index(drop=True, inplace=False).rmse_val
-    x = adam_slice.reset_index(drop=True, inplace=False).batch_size
-    save_path = args.out_dir+'/adam-batch_size-eta_{}_l2_lambda_{}.png'.format(10, 0.01)
-    plot_figure(x, y, x_label='Batch Size', y_label='RMSE (Validation)', title="Adam Optimizer",
-                x_lim=(-50, 1050), y_lim=(0, 40), save_path=save_path)
+        ada = pd.read_csv(args.ada_log)
 
-    # adam
-    # eta == 0.01, l2_lambda == 0.01, batch_size: 10, 50, 100, 500, 1000
+        # ada
+        # l2_lambda == 0.01, batch_size == 50, eta: 1e-4, 1e-3, 1e-2, 1e-1, 1, 10
 
-    adam_slice = adam[(adam.eta == 0.01)&(adam.l2_lambda == 0.01)].sort_values(by=['batch_size'])
-    y = adam_slice.reset_index(drop=True, inplace=False).rmse_val
-    x = adam_slice.reset_index(drop=True, inplace=False).batch_size
-    save_path = args.out_dir+'/adam-batch_size-eta_{}_l2_lambda_{}.png'.format(0.01, 0.01)
-    plot_figure(x, y, x_label='Batch Size', y_label='RMSE (Validation)', title="Adam Optimizer",
-                x_lim=(-50, 1050), y_lim=(5, 6), save_path=save_path)
+        ada_slice = ada[(ada.l2_lambda == 0.01)&(ada.batch_size == 50)].sort_values(by=['eta'])
+        y = ada_slice.reset_index(drop=True, inplace=False).rmse_val
+        x = ada_slice.reset_index(drop=True, inplace=False).eta
+        save_path = args.out_dir+'/ada-eta-batch_size_{}_l2_lambda_{}.png'.format(50, 0.01)
+        plot_figure(x, y, x_label='Learning Rate (eta)', y_label='RMSE (Validation)', title="Ada Gradient",
+                    y_lim=(5, 10), x_log_scale=True, save_path=save_path)
 
+        # ada
+        # eta == 0.01, batch_size == 50, l2_lambda: 1e-4, 1e-3, 1e-2, 1e-1, 1, 10
 
-    # ada
-    # l2_lambda == 0.01, batch_size == 50, eta: 1e-4, 1e-3, 1e-2, 1e-1, 1, 10
-
-    ada_slice = ada[(ada.l2_lambda == 0.01)&(ada.batch_size == 50)].sort_values(by=['eta'])
-    y = ada_slice.reset_index(drop=True, inplace=False).rmse_val
-    x = ada_slice.reset_index(drop=True, inplace=False).eta
-    save_path = args.out_dir+'/ada-eta-batch_size_{}_l2_lambda_{}.png'.format(50, 0.01)
-    plot_figure(x, y, x_label='Learning Rate (eta)', y_label='RMSE (Validation)', title="Ada Gradient",
-                y_lim=(5, 10), x_log_scale=True, save_path=save_path)
-
-
-    # adam
-    # eta == 0.01, batch_size == 50, l2_lambda: 1e-4, 1e-3, 1e-2, 1e-1, 1, 10
-
-    adam_slice = adam[(adam.eta == 0.01)&(adam.batch_size == 50)&(adam.l2_lambda != 0)].sort_values(by=['l2_lambda'])
-    y = adam_slice.reset_index(drop=True, inplace=False).rmse_val
-    x = adam_slice.reset_index(drop=True, inplace=False).l2_lambda
-    save_path = args.out_dir+'/adam-l2_lambda-eta_{}_batch_size_{}.png'.format(0.01, 50)
-    plot_figure(x, y, x_label='L2 Lambda', y_label='RMSE (Validation)', title="Adam Optimizer",
-                y_lim=(5, 6), x_log_scale=True, save_path=save_path)
-
-
-    # ada
-    # eta == 0.01, batch_size == 50, l2_lambda: 1e-4, 1e-3, 1e-2, 1e-1, 1, 10
-
-    ada_slice = ada[(ada.eta == 0.01)&(ada.batch_size == 50)&(ada.l2_lambda != 0)].sort_values(by=['l2_lambda'])
-    y = ada_slice.reset_index(drop=True, inplace=False).rmse_val
-    x = ada_slice.reset_index(drop=True, inplace=False).l2_lambda
-    save_path = args.out_dir+'/ada-l2_lambda-eta_{}_batch_size_{}.png'.format(0.01, 50)
-    plot_figure(x, y, x_label='L2 Lambda', y_label='RMSE (Validation)', title="Ada Gradient",
-                y_lim=(5 , 6), x_log_scale=True, save_path=save_path)
+        ada_slice = ada[(ada.eta == 0.01)&(ada.batch_size == 50)&(ada.l2_lambda != 0)].sort_values(by=['l2_lambda'])
+        y = ada_slice.reset_index(drop=True, inplace=False).rmse_val
+        x = ada_slice.reset_index(drop=True, inplace=False).l2_lambda
+        save_path = args.out_dir+'/ada-l2_lambda-eta_{}_batch_size_{}.png'.format(0.01, 50)
+        plot_figure(x, y, x_label='L2 Lambda', y_label='RMSE (Validation)', title="Ada Gradient",
+                    y_lim=(5 , 6), x_log_scale=True, save_path=save_path)
