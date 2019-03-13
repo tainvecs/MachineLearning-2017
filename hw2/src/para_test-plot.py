@@ -59,20 +59,20 @@ if __name__ == '__main__':
 
     # input
     lr = pd.read_csv(args.lr_log)
-    
+
     # eta
-    save_path = args.out_dir+'/eta-opt_{}_l2_lambda_{}_batch_size_{}_norm_{}.png'.format('adam', 0.001, 10, 'standard') 
-    eta = lr[(lr.opt == 'adam')&(lr.batch == 10)&(lr.l2_lambda == 0.001)&(lr.norm == 'standard')]\
+    save_path = args.out_dir+'/eta-opt_{}_l2_lambda_{}_batch_size_{}_norm_{}.png'.format('adam', 0.0001, 10, 'standard')
+    eta = lr[(lr.opt == 'adam')&(lr.batch == 10)&(lr.l2_lambda == 0.0001)&(lr.norm == 'standard')]\
         .sort_values(by=['eta'], ascending=False).reset_index(drop=True)
-    plot_figure(eta['eta'], eta['acc'], 'Learning Rate (eta)', 'Accuracy (Validation)', title=None, 
-                x_lim=None, y_lim=[0.835, 0.856], x_log_scale = True, y_log_scale = False, 
+    plot_figure(eta['eta'], eta['acc'], 'Learning Rate (eta)', 'Accuracy (Validation)', title=None,
+                x_lim=None, y_lim=[0.83, 0.86], x_log_scale = True, y_log_scale = False,
                 show=False, save_path=save_path)
-    
+
     # lambda
-    save_path = args.out_dir+'/l2_lambda-opt_{}_eta_{}_batch_size_{}_norm_{}.png'.format('adam', 0.1, 10, 'standard') 
-    l2_lambda = lr[(lr.opt == 'adam')&(lr.batch == 10)&(lr.eta == 0.1)&(lr.norm == 'standard')]\
+    save_path = args.out_dir+'/l2_lambda-opt_{}_eta_{}_batch_size_{}_norm_{}.png'.format('adam', 0.01, 10, 'standard')
+    l2_lambda = lr[(lr.opt == 'adam')&(lr.batch == 10)&(lr.eta == 0.01)&(lr.norm == 'standard')]\
         .sort_values(by=['l2_lambda'], ascending=False).reset_index(drop=True)
-    plot_figure(l2_lambda['l2_lambda'], l2_lambda['acc'], 
-                'L2 Regularization Lambda', 'Accuracy (Validation)', title=None, 
-                x_lim=None, y_lim=[0.835, 0.856], x_log_scale = True, y_log_scale = False, 
+    plot_figure(l2_lambda['l2_lambda'], l2_lambda['acc'],
+                'L2 Regularization Lambda', 'Accuracy (Validation)', title=None,
+                x_lim=None, y_lim=[0.83, 0.86], x_log_scale = True, y_log_scale = False,
                 show=False, save_path=save_path)

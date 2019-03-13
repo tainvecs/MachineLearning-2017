@@ -8,8 +8,8 @@ python3 logistic_regression.py \
     --random_seed 1234 \
     --epoch 1000 \
     --batch_size 10 \
-    --eta 0.001 \
-    --l2_lambda 0.1 \
+    --eta 0.01 \
+    --l2_lambda 0.0001 \
     --optimizer 'adam' \
     --beta_m 0.9 \
     --beta_v 0.999 \
@@ -18,7 +18,7 @@ python3 logistic_regression.py \
     --early_stop true \
     --debug true
     # --test_answer \
-    #--in_model \
+    # --in_model \
     # --out_log \
-    #--out_model \
-    #--out_predict \
+    # --out_model \
+    # --out_predict \

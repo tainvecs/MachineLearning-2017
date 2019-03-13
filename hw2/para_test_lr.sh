@@ -34,7 +34,7 @@ if true ; then
                             --epsilon 1e-8 \
                             --norm $norm \
                             --early_stop true \
-                            --out_log ./log/para_search_lg.log \
+                            --out_log ./log/para_test_lg.log \
                             --debug true 2>&1 > /dev/null &
                             #--in_model \
                             #--out_model \

@@ -139,33 +139,40 @@ Predict whether income exceeds $50K/yr based on census data. Also known as "Cens
 	- Learning Rate (eta)
 		+ 10 1 0.1 0.01 0.001 0.0001 0.00001
 	- In general, model trained with **standard score** normalized features and **adam** optimizer gain better performance.
-	- The following tables shows part of the validation result.
+	- The best parameter set is adam optimizer with mini batch size 10, L2 regularization lambda 0.0001 and learning rate 0.01. The following table shows part of the validation result with different scaling of L2 regularization lambda and  learning rate, and compares the performance on different feature normalization method.
 
 
-| Optimizer | Feature Normalization | Mini Batch Size | L2 Regularization Lambda | Eta |   Accuracy (Validation) |
-| :---: | :------: | -----: | ------: |--------- | ----------: |
-|  adam | standard |     10 |   0.001 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1 |  0.855037 |
-|  adam |  min_max |     10 |   0.001 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1 |  0.846437 |
-|  adam |     mean |     10 |   0.001 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1 |  0.845209 |
-|  adam |     none |     10 |   0.001 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1 |  0.819717 |
+| Optimizer | Feature Normalization | Mini Batch Size | L2 Regularization Lambda | Learning Rate (eta) |   Accuracy (Validation) |
+| :---: | :------: | -----: | ------: |---------: | ----------: |
+|  adam | standard |     10 |   0.0001 | 0.01   |  **0.854115** |
+|  adam |  min_max |     10 |   0.0001 | 0.01   |  0.851658 |
+|  adam |     mean |     10 |   0.0001 | 0.01   |  0.851966 |
+|  adam |     none |     10 |   0.0001 | 0.01   |  0.844902 |
+|  adam | standard |     10 |   0.0001 | 0.0001 |  0.851658 |
+|  adam |  min_max |     10 |   0.0001 | 0.0001 |  0.850123 |
+|  adam |     mean |     10 |   0.0001 | 0.0001 |  0.849509 |
+|  adam |     none |     10 |   0.0001 | 0.0001 |  0.847052 |
+|  adam | standard |     10 |   0.0001 | 1 |  0.837531 |
+|  adam |  min_max |     10 |   0.0001 | 1 |  0.833231 |
+|  adam |     mean |     10 |   0.0001 | 1 |  0.836916 |
+|  adam |     none |     10 |   0.0001 | 1 |  0.809275 |
+|  adam | standard |     10 |    0.01  | 0.01 |  0.851351 |
+|  adam |  min_max |     10 |    0.01  | 0.01 |  0.839681 |
+|  adam |     mean |     10 |    0.01  | 0.01 |  0.840295 |
+|  adam |     none |     10 |    0.01  | 0.01 |  0.808968 |
 
-| Optimizer | Feature Normalization | Mini Batch Size | L2 Regularization Lambda | Eta |   Accuracy (Validation) |
-| :---: | :------: | -----: | ------: | --------- | ----------: |
-|  adam | standard |     10 |   0.001 |       0.0001 |  0.851658 |
-|  adam |  min_max |     10 |   0.001 |       0.0001 |  0.842752 |
-|  adam |     mean |     10 |   0.001 |       0.0001 |  0.841523 |
-|  adam |     none |     10 |   0.001 |       0.0001 |  0.850737 |
 
-* As the tables shown, training with standard score normalized features gets better validation accuracy than none normalized features.
-* In addition, feature normalization shows significant improvement if learning rate eta is large enough. In contrast, validation accuracy shows no difference with small learning rate eta.
+* As the tables shown, training with standard score normalized features gets consistently better validation accuracy than training with none normalized features.
+* In addition, feature normalization shows significant improvement if learning rate eta or L2 regularization lambda is relatively large.
+* Besides, we also found that training with none normalized features is more vulnerable to overflow error when computing exponential value in sigmoid function.
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw2/png/eta-opt_adam_l2_lambda_0.001_batch_size_10_norm_standard.png?raw=true)
+![](https://github.com/tainvecs/ml-2017/blob/master/hw2/png/eta-opt_adam_l2_lambda_0.0001_batch_size_10_norm_standard.png?raw=true)
 * Learning rate eta tested with 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1 and 10.
-* Optimizer: adam, Feature Normalization: standard, Mini Batch Size: 10, L2 Regularization Lambda: 0.001
+* Optimizer: adam, Feature Normalization: standard, Mini Batch Size: 10, L2 Regularization Lambda: 0.0001
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw2/png/l2_lambda-opt_adam_eta_0.1_batch_size_10_norm_standard.png?raw=true)
+![](https://github.com/tainvecs/ml-2017/blob/master/hw2/png/l2_lambda-opt_adam_eta_0.01_batch_size_10_norm_standard.png?raw=true)
 * L2 regularization lambda tested with 1e-4, 1e-3, 1e-2 and 1e-1.
-* Optimizer: adam, Feature Normalization: standard, Mini Batch Size: 10, Learning Rate Eta: 0.1
+* Optimizer: adam, Feature Normalization: standard, Mini Batch Size: 10, Learning Rate Eta: 0.01
 
 
 * **Probabilistic Generative model**
