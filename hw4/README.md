@@ -167,28 +167,20 @@ In homework 4, we are given twitter dataset with sentiment labels. By training R
 
 * **Semi-supervised Learning**
     * Semi-supervised Learning: Self-training
-    * For each input data $`x_i = (x_{i1}, x_{i2}, ..., x_{in})`$, the ensemble model predict the probabilities of classes $`y_i = (y_{i1}, y_{i2})`$ where $`n`$ is the dimension of input data.
-    * We use $`cfd = y_{i1} - y_{i2}`$ as a confident value and pseudo label the unlabeled dataset.
-    *
-    ```math
-        pseudo \; labeled \; class=\left\{
-        \begin{aligned}
-            0 & , & cfd_{lower} \leq cfd \leq cfd_{upper} \\
-            1 & , & -cfd_{lower} \leq cfd \leq -cfd_{upper} \\
-        \end{aligned}
-        \right.
-    ```
-    * where $`cfd_{lower}`$ and $`cfd_{upper}`$ are the upper and lower bounds, respectively.
+    * For each input data <a href="https://www.codecogs.com/eqnedit.php?latex=x_i&space;=&space;(x_{i1},&space;x_{i2},&space;...,&space;x_{in})" target="_blank"><img src="https://latex.codecogs.com/svg.latex?x_i&space;=&space;(x_{i1},&space;x_{i2},&space;...,&space;x_{in})" title="x_i = (x_{i1}, x_{i2}, ..., x_{in})" /></a>, the ensemble model predict the probabilities of classes <a href="https://www.codecogs.com/eqnedit.php?latex=y_i&space;=&space;(y_{i1},&space;y_{i2})" target="_blank"><img src="https://latex.codecogs.com/svg.latex?y_i&space;=&space;(y_{i1},&space;y_{i2})" title="y_i = (y_{i1}, y_{i2})" /></a> where <a href="https://www.codecogs.com/eqnedit.php?latex=n" target="_blank"><img src="https://latex.codecogs.com/svg.latex?n" title="n" /></a> is the dimension of input data.
+    * We use <a href="https://www.codecogs.com/eqnedit.php?latex=cfd&space;=&space;y_{i1}&space;-&space;y_{i2}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd&space;=&space;y_{i1}&space;-&space;y_{i2}" title="cfd = y_{i1} - y_{i2}" /></a> as a confident value and pseudo label the unlabeled dataset.
+    * <a href="https://www.codecogs.com/eqnedit.php?latex=pseudo&space;\;&space;labeled&space;\;&space;class=\left\{&space;\begin{aligned}&space;0&space;&&space;,&space;&&space;cfd_{lower}&space;\leq&space;cfd&space;\leq&space;cfd_{upper}&space;\\&space;1&space;&&space;,&space;&&space;-cfd_{lower}&space;\leq&space;cfd&space;\leq&space;-cfd_{upper}&space;\\&space;\end{aligned}&space;\right." target="_blank"><img src="https://latex.codecogs.com/svg.latex?pseudo&space;\;&space;labeled&space;\;&space;class=\left\{&space;\begin{aligned}&space;0&space;&&space;,&space;&&space;cfd_{lower}&space;\leq&space;cfd&space;\leq&space;cfd_{upper}&space;\\&space;1&space;&&space;,&space;&&space;-cfd_{lower}&space;\leq&space;cfd&space;\leq&space;-cfd_{upper}&space;\\&space;\end{aligned}&space;\right." title="pseudo \; labeled \; class=\left\{ \begin{aligned} 0 & , & cfd_{lower} \leq cfd \leq cfd_{upper} \\ 1 & , & -cfd_{lower} \leq cfd \leq -cfd_{upper} \\ \end{aligned} \right." /></a>
+    * where <a href="https://www.codecogs.com/eqnedit.php?latex=cfd_{lower}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd_{lower}" title="cfd_{lower}" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=cfd_{upper}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd_{upper}" title="cfd_{upper}" /></a> are the upper and lower bounds, respectively.
     * We train LSTM model on "proc" labeled and pseudo labeled training data with best performed parameters in previous experiments.
     * |  |  |  |  |
         | :-: | :-: | :-: | :-: |
-        | **$`cfd_{lower}`$** | **$`cfd_{upper}`$** | **Validation Accuracy** | **Learning Curves** |
+        | <a href="https://www.codecogs.com/eqnedit.php?latex=cfd_{lower}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd_{lower}" title="cfd_{lower}" /></a> | <a href="https://www.codecogs.com/eqnedit.php?latex=cfd_{upper}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd_{upper}" title="cfd_{upper}" /></a> | **Validation Accuracy** | **Learning Curves** |
         | 0.95 | 1.0 | 0.8336 | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.95/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
         | 0.7 | 1.0 | 0.8350 | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.7/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
         | 0.5 | 0.7 | 0.8406 | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.5_0.7/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
         | 0.3 | 0.7 | **0.8427** | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.3_0.7/val_0.1_seed_1234_epoch_30_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
-    * Pseudo labeling with higher $`cfd_{lower}`$ and $`cfd_{upper}`$ seems to gain \"easier cases\" for the LSTM model. These \"easier cases\" seems not able to provide new information for LSTM model training and the performance does not improve.
-    * Benefit from those low $`cfd`$ pseudo labeled data, the performance is able to improve. The learning curves tend to be steeper in first few epochs. It shows that the LSTM model does not perform well on those data, yet learns and improves by training with them.
+    * Pseudo labeling with higher <a href="https://www.codecogs.com/eqnedit.php?latex=cfd_{lower}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd_{lower}" title="cfd_{lower}" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=cfd_{upper}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd_{upper}" title="cfd_{upper}" /></a> seems to gain \"easier cases\" for the LSTM model. These \"easier cases\" seems not able to provide new information for LSTM model training and the performance does not improve.
+    * Benefit from those low <a href="https://www.codecogs.com/eqnedit.php?latex=cfd" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd" title="cfd" /></a> pseudo labeled data, the performance is able to improve. The learning curves tend to be steeper in first few epochs. It shows that the LSTM model does not perform well on those data, yet learns and improves by training with them.
     * The LSTM model might just learn to do similar prediction with the ensemble model.
     * We also try to ensemble with models trained with pseudo labeled data. The performance shows no improvement and is limited to **0.8450** validation accuracy.
 
