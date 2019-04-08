@@ -36,3 +36,14 @@
 			- Activation Function, ReLU, LeakyReLU, PReLU, ELU
 			- Saliency Map
 			- Convolution Filter Visualization
+	- **HW4**: Text Sentiment Classification
+    	+ [Kaggle Link](https://www.kaggle.com/c/ml-2017fall-hw4)
+    	+ [Repository](https://github.com/tainvecs/ml-2017/tree/master/hw4), [Repository Readme](https://github.com/tainvecs/ml-2017/blob/master/hw4/README.md)
+    	+ Keyword
+    		- Binary Classification
+    		- Recurrent Neural Network, LSTM, GRU
+			- Batch Normalization, Dropout
+			- Activation Function, Swish, SELU
+			- Word Embedding, FastText
+			- Semi-supervised Learning
+			- Ensemble
