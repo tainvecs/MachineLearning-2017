@@ -8,13 +8,13 @@
 ## Maintainer Info
 * Chin-Ho, Lin
 * tainvecs@gmail.com
-* [Github](https://github.com/tainvecs/ml-2017)
+* [GitLab](https://gitlab.com/tainvecs/MachineLearning-2017/)
 
 
 ## Outline
-* [Overview](https://github.com/tainvecs/ml-2017/blob/master/hw4/README.md#overview)
-* [Dataset](https://github.com/tainvecs/ml-2017/blob/master/hw4/README.md#dataset)
-* [Experiment](https://github.com/tainvecs/ml-2017/blob/master/hw4/README.md#experiment)
+* [Overview](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/README.md#overview)
+* [Dataset](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/README.md#dataset)
+* [Experiment](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/README.md#experiment)
     - Data Preprocessing
     - Word Embedding
     - Model Architecture
@@ -23,7 +23,7 @@
     - Best Performed LSTM Model Trained with Dataset Preprocessed in Different Ways
     - Ensemble
     - Semi-supervised Learning
-* [Reference](https://github.com/tainvecs/ml-2017/blob/master/hw4/README.md#reference)
+* [Reference](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/README.md#reference)
 
 
 ## Overview
@@ -94,8 +94,8 @@ In homework 4, we are given twitter dataset with sentiment labels. By training R
 		+ Optimizer: \"adam\"
     * |  |  |  |
 		| :-: | :-: | :-: |
-		| GRU | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot/best-gru.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot/model/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_gru_tanh_u_256_256_d_0.2_rd_0.2_dnn_swish_u_256_256_d_True_norm_0.4_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6.proc_epoch_0008_val_acc_0.8327_train_acc_0.8499.model.png?raw=true) |
-		| LSTM | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot/best-lstm.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot/model/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6.proc_epoch_0015_val_acc_0.8368_train_acc_0.8493.model.png?raw=true) |
+		| GRU | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot/best-gru.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot/model/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_gru_tanh_u_256_256_d_0.2_rd_0.2_dnn_swish_u_256_256_d_True_norm_0.4_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6.proc_epoch_0008_val_acc_0.8327_train_acc_0.8499.model.png?raw=true) |
+		| LSTM | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot/best-lstm.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot/model/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6.proc_epoch_0015_val_acc_0.8368_train_acc_0.8493.model.png?raw=true) |
 	* **GRU** model has less training parameters than **LSTM** model. Therefore, **GRU** model has faster training speed.
 
 * **Experiment Result (GRU)**
@@ -143,9 +143,9 @@ In homework 4, we are given twitter dataset with sentiment labels. By training R
     * |  |  |  |
         | :-: | :-: | :-: |
         | **LSTM Dropout Rate** | **Dense Dropout Rate** | **Learning Curves** |
-        | 0.2 | 0.4 | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot/loss_acc_curves/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.2_rd_0.2_dnn_swish_u_256_256_d_True_norm_0.4_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
-        | 0.4 | 0.3 | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot/loss_acc_curves/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
-        | 0.5 | 0.5 | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot/loss_acc_curves/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.5_rd_0.5_dnn_swish_u_256_256_d_0.5_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
+        | 0.2 | 0.4 | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot/loss_acc_curves/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.2_rd_0.2_dnn_swish_u_256_256_d_True_norm_0.4_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
+        | 0.4 | 0.3 | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot/loss_acc_curves/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
+        | 0.5 | 0.5 | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot/loss_acc_curves/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.5_rd_0.5_dnn_swish_u_256_256_d_0.5_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
     * From learning curves, higher dropout rate prevent overfitting but also slow down the speed of convergence. Too large dropout rate might also limit the performance of models.
 
 * **Best Performed LSTM Model Trained with Dataset Preprocessed in Different Ways**
@@ -175,10 +175,10 @@ In homework 4, we are given twitter dataset with sentiment labels. By training R
     * |  |  |  |  |
         | :-: | :-: | :-: | :-: |
         | <a href="https://www.codecogs.com/eqnedit.php?latex=cfd_{lower}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd_{lower}" title="cfd_{lower}" /></a> | <a href="https://www.codecogs.com/eqnedit.php?latex=cfd_{upper}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd_{upper}" title="cfd_{upper}" /></a> | **Validation Accuracy** | **Learning Curves** |
-        | 0.95 | 1.0 | 0.8336 | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.95/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
-        | 0.7 | 1.0 | 0.8350 | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.7/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
-        | 0.5 | 0.7 | 0.8406 | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.5_0.7/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
-        | 0.3 | 0.7 | **0.8427** | ![](https://github.com/tainvecs/ml-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.3_0.7/val_0.1_seed_1234_epoch_30_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
+        | 0.95 | 1.0 | 0.8336 | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.95/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
+        | 0.7 | 1.0 | 0.8350 | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.7/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
+        | 0.5 | 0.7 | 0.8406 | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.5_0.7/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
+        | 0.3 | 0.7 | **0.8427** | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.3_0.7/val_0.1_seed_1234_epoch_30_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
     * Pseudo labeling with higher <a href="https://www.codecogs.com/eqnedit.php?latex=cfd_{lower}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd_{lower}" title="cfd_{lower}" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=cfd_{upper}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd_{upper}" title="cfd_{upper}" /></a> seems to gain \"easier cases\" for the LSTM model. These \"easier cases\" seems not able to provide new information for LSTM model training and the performance does not improve.
     * Benefit from those low <a href="https://www.codecogs.com/eqnedit.php?latex=cfd" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd" title="cfd" /></a> pseudo labeled data, the performance is able to improve. The learning curves tend to be steeper in first few epochs. It shows that the LSTM model does not perform well on those data, yet learns and improves by training with them.
     * The LSTM model might just learn to do similar prediction with the ensemble model.

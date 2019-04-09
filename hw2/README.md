@@ -7,7 +7,7 @@
 ## Maintainer Info
 * Chin-Ho, Lin
 * tainvecs@gmail.com
-* [Github](https://github.com/tainvecs/ml-2017)
+* [GitLab](https://gitlab.com/tainvecs/MachineLearning-2017/)
 
 
 ## Overview
@@ -166,11 +166,11 @@ Predict whether income exceeds $50K/yr based on census data. Also known as "Cens
 * In addition, feature normalization shows significant improvement if learning rate eta or L2 regularization lambda is relatively large.
 * Besides, we also found that training with none normalized features is more vulnerable to overflow error when computing exponential value in sigmoid function.
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw2/png/eta-opt_adam_l2_lambda_0.0001_batch_size_10_norm_standard.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw2/png/eta-opt_adam_l2_lambda_0.0001_batch_size_10_norm_standard.png?raw=true)
 * Learning rate eta tested with 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1 and 10.
 * Optimizer: adam, Feature Normalization: standard, Mini Batch Size: 10, L2 Regularization Lambda: 0.0001
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw2/png/l2_lambda-opt_adam_eta_0.01_batch_size_10_norm_standard.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw2/png/l2_lambda-opt_adam_eta_0.01_batch_size_10_norm_standard.png?raw=true)
 * L2 regularization lambda tested with 1e-4, 1e-3, 1e-2 and 1e-1.
 * Optimizer: adam, Feature Normalization: standard, Mini Batch Size: 10, Learning Rate Eta: 0.01
 

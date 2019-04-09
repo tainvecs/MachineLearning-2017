@@ -8,18 +8,18 @@
 ## Maintainer Info
 * Chin-Ho, Lin
 * tainvecs@gmail.com
-* [Github](https://github.com/tainvecs/ml-2017)
+* [GitLab](https://gitlab.com/tainvecs/MachineLearning-2017/)
 
 
 ## Outline
-* [Overview](https://github.com/tainvecs/ml-2017/blob/master/hw3/README.md#overview)
-* [Dataset](https://github.com/tainvecs/ml-2017/blob/master/hw3/README.md#dataset)
-* [Model Architecture](https://github.com/tainvecs/ml-2017/blob/master/hw3/README.md#model-architecture)
-* [CNN Model](https://github.com/tainvecs/ml-2017/blob/master/hw3/README.md#cnn-model)
-* [Learning Curve](https://github.com/tainvecs/ml-2017/blob/master/hw3/README.md#learning-curve)
-* [Confusion Matrix](https://github.com/tainvecs/ml-2017/blob/master/hw3/README.md#confusion-matrix)
-* [Saliency Map](https://github.com/tainvecs/ml-2017/blob/master/hw3/README.md#saliency-map)
-* [Convolutional Filter Visualization](https://github.com/tainvecs/ml-2017/blob/master/hw3/README.md#convolutional-filter-visualization)
+* [Overview](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/README.md#overview)
+* [Dataset](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/README.md#dataset)
+* [Model Architecture](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/README.md#model-architecture)
+* [CNN Model](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/README.md#cnn-model)
+* [Learning Curve](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/README.md#learning-curve)
+* [Confusion Matrix](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/README.md#confusion-matrix)
+* [Saliency Map](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/README.md#saliency-map)
+* [Convolutional Filter Visualization](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/README.md#convolutional-filter-visualization)
 
 
 ## Overview
@@ -47,7 +47,7 @@ Human face images consist of 7 different sentiment classes, "**Angry**", "**Disg
 
 ## Model Architecture
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/model/896.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/model/896.png?raw=true)
 
 * **First Part**
 	* Layers \"**Convolution**\", \"**Activation Function**\", \"**Batch Normalization**\", \"**Max Pooling**\", \"**Dropout**\" are repeated for 4 times.
@@ -117,13 +117,13 @@ Human face images consist of 7 different sentiment classes, "**Angry**", "**Disg
 
 ## Learning Curve
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_56_leakyrelu_0.3_dnn_unit_448_leakyrelu_0.3.loss_acc_curves.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_56_leakyrelu_0.3_dnn_unit_448_leakyrelu_0.3.loss_acc_curves.png?raw=true)
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_56_elu_1.0_dnn_unit_448_elu_1.0.loss_acc_curves.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_56_elu_1.0_dnn_unit_448_elu_1.0.loss_acc_curves.png?raw=true)
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_56_prelu_0.0_dnn_unit_448_prelu_0.0.loss_acc_curves.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_56_prelu_0.0_dnn_unit_448_prelu_0.0.loss_acc_curves.png?raw=true)
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_56_relu_0.0_dnn_unit_448_relu_0.0.loss_acc_curves.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_56_relu_0.0_dnn_unit_448_relu_0.0.loss_acc_curves.png?raw=true)
 
 * Parameters
 	- **Epoch**
@@ -145,7 +145,7 @@ Human face images consist of 7 different sentiment classes, "**Angry**", "**Disg
 * Applying theses activation functions in the CNN model are able to perform about 0.7 accuracy on validation set.
 * From learning curve of LeakyReLU using keras default alpha 0.3, we may found that the training improvement of loss and accuracy dramatically slow down after 250 epochs.
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_4000_batch_64_opt_adam_cnn_filter_56_leakyrelu_0.3_dnn_unit_448_leakyrelu_0.3.loss_acc_curves.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_4000_batch_64_opt_adam_cnn_filter_56_leakyrelu_0.3_dnn_unit_448_leakyrelu_0.3.loss_acc_curves.png?raw=true)
 
 * Parameters
 	- **Epoch**
@@ -163,7 +163,7 @@ Human face images consist of 7 different sentiment classes, "**Angry**", "**Disg
 
 * We plot learning curves of 4000 epochs. Compare to 2000 epochs, the training performance is still improving but with an extremely slow speed.
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_32_opt_adam_cnn_filter_56_leakyrelu_0.3_dnn_unit_448_leakyrelu_0.3.loss_acc_curves.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_32_opt_adam_cnn_filter_56_leakyrelu_0.3_dnn_unit_448_leakyrelu_0.3.loss_acc_curves.png?raw=true)
 
 * Parameters
 	- **Epoch**
@@ -181,7 +181,7 @@ Human face images consist of 7 different sentiment classes, "**Angry**", "**Disg
 
 * We tried a batch size 32 model but the model converge even slightly slower.
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_32_opt_adam_cnn_filter_56_leakyrelu_0.1_dnn_unit_448_leakyrelu_0.1.loss_acc_curves.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_32_opt_adam_cnn_filter_56_leakyrelu_0.1_dnn_unit_448_leakyrelu_0.1.loss_acc_curves.png?raw=true)
 
 * Parameters
 	- **Epoch**
@@ -200,9 +200,9 @@ Human face images consist of 7 different sentiment classes, "**Angry**", "**Disg
 * Activation function "LeakyReLU" is a special case of "PReLU" with constant alpha. As the models with "ReLU" and "PReLU" activation function are able to converge much faster, model with "LeakyReLU" activation function should able to converge in same speed.
 * We tried a smaller alpha model and training speed indeed speed up.
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_56_elu_1.0_dnn_unit_448_elu_1.0.loss_acc_curves.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_56_elu_1.0_dnn_unit_448_elu_1.0.loss_acc_curves.png?raw=true)
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_56_elu_0.7_dnn_unit_448_elu_0.7.loss_acc_curves.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_56_elu_0.7_dnn_unit_448_elu_0.7.loss_acc_curves.png?raw=true)
 
 * Parameters
 	- **Epoch**
@@ -222,7 +222,7 @@ Human face images consist of 7 different sentiment classes, "**Angry**", "**Disg
 
 * Besides, we tried a smaller alpha with \"ELU\" activation function, and the training performance and time to converge shows no significant difference.
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0.loss_acc_curves.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/loss_acc_curves/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0.loss_acc_curves.png?raw=true)
 
 * Furthermore, we tried a model with more filters, and the training loss converge to 0 even much faster.
 * Parameters
@@ -244,7 +244,7 @@ Human face images consist of 7 different sentiment classes, "**Angry**", "**Disg
 
 ## Confusion Matrix
 
-![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/confusion_matrix/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.confusion_matrix.png?raw=true)
+![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/confusion_matrix/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.confusion_matrix.png?raw=true)
 
 * From the confusion matrix, the model has the best performance on class \"happy\".
 * Images of classes \"Disgust\" and \"Surprise\" have more facial expressions and seem to be easier cases for the model.
@@ -253,8 +253,8 @@ Human face images consist of 7 different sentiment classes, "**Angry**", "**Disg
 
 | **True:Fear, Predict:Angry** | **True:Fear, Predict:Sad** | **True:Angry, Predict:Neutral** | **True:Sad, Predict:Neutral** |
 | :-: | :-: | :-: | :-: |
-| ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/example/386.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/example/8.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/example/135.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/example/167.png?raw=true)|
-| ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/example/311.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/example/215.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/example/742.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/example/154.png?raw=true) |
+| ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/example/386.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/example/8.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/example/135.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/example/167.png?raw=true)|
+| ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/example/311.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/example/215.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/example/742.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/example/154.png?raw=true) |
 
 * Some images might be mislabeled or ambiguous.
 * Class \"Fear\" seem to be mispredicted as classes \"Angry\" and \"Sad\".
@@ -268,13 +268,13 @@ Human face images consist of 7 different sentiment classes, "**Angry**", "**Disg
 |  |  |  |  |
 | :-: | :-: | :-: | :-: |
 | **Class** | **Original Image** | **Heat Map** | **Focus** |
-| Angry | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25704.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25704.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25704.png?raw=true) |
-| Disgust | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25717.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25717.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25717.png?raw=true) |
-| Fear | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25707.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25707.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25707.png?raw=true) |
-| Happy | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25705.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25705.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25705.png?raw=true) |
-| Sad | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25700.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25700.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25700.png?raw=true) |
-| Surprise | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25699.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25699.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25699.png?raw=true) |
-| Neutral | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25718.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25718.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25718.png?raw=true) |
+| Angry | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25704.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25704.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25704.png?raw=true) |
+| Disgust | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25717.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25717.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25717.png?raw=true) |
+| Fear | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25707.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25707.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25707.png?raw=true) |
+| Happy | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25705.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25705.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25705.png?raw=true) |
+| Sad | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25700.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25700.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25700.png?raw=true) |
+| Surprise | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25699.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25699.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25699.png?raw=true) |
+| Neutral | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.ori_img.image_25718.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.heatmp.image_25718.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/saliency_map/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.machine_focus.image_25718.png?raw=true) |
 
 
 ## Convolutional Filter Visualization
@@ -285,21 +285,21 @@ Human face images consist of 7 different sentiment classes, "**Angry**", "**Disg
 | | |
 | :-: | :-: |
 | **Filters of First Conv2D Layer** | **Output of First Conv2D Layer** |
-| ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_conv2d_1.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_conv2d_1.png?raw=true) |
+| ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_conv2d_1.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_conv2d_1.png?raw=true) |
 | **Filters of First Conv2D Layer + Batch Norm + Activation** | **Output of First Conv2D Layer + Batch Norm + Activation** |
-| ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_elu_1.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_elu_1.png?raw=true) |
+| ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_elu_1.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_elu_1.png?raw=true) |
 | **Filters of Second Conv2D Layer** | **Output of Second Conv2D Layer** |
-| ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_conv2d_2.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_conv2d_2.png?raw=true) |
+| ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_conv2d_2.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_conv2d_2.png?raw=true) |
 | **Filters of Second Conv2D Layer + Batch Norm + Activation** | **Output of Second Conv2D Layer + Batch Norm + Activation** |
-| ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_elu_2.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_elu_2.png?raw=true) |
+| ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_elu_2.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_elu_2.png?raw=true) |
 | **Filters of Third Conv2D Layer** | **Output of Third Conv2D Layer** |
-| ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_conv2d_3.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_conv2d_3.png?raw=true) |
+| ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_conv2d_3.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_conv2d_3.png?raw=true) |
 | **Filters of Third Conv2D Layer + Batch Norm + Activation** | **Output of Third Conv2D Layer + Batch Norm + Activation** |
-| ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_elu_3.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_elu_3.png?raw=true) |
+| ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_elu_3.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_elu_3.png?raw=true) |
 | **Filters of Fourth Conv2D Layer** | **Output of Fourth Conv2D Layer** |
-| ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_conv2d_4.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_conv2d_4.png?raw=true) |
+| ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_conv2d_4.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_conv2d_4.png?raw=true) |
 | **Filters of Fourth Conv2D Layer + Batch Norm + Activation** | **Output of Fourth Conv2D Layer + Batch Norm + Activation** |
-| ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_elu_4.png?raw=true) | ![](https://github.com/tainvecs/ml-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_elu_4.png?raw=true) |
+| ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.activate_filter.layer_elu_4.png?raw=true) | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/plot/activate_filter/val_0.1_seed_1234_epoch_2000_batch_64_opt_adam_cnn_filter_112_elu_1.0_dnn_unit_896_elu_1.0_0722-0.7052.filtered_image.layer_elu_4.png?raw=true) |
 
 
 ## Reference

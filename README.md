@@ -6,7 +6,7 @@
 * **Homework**
 	- **HW1**: PM2.5 Prediction
 		+ [Kaggle Link](https://www.kaggle.com/c/ml-2017fall-hw1)
-		+ [Repository](https://github.com/tainvecs/ml-2017/tree/master/hw1), [Repository Readme](https://github.com/tainvecs/ml-2017/blob/master/hw1/README.md)
+		+ [Repository](https://github.com/tainvecs/MachineLearning-2017/tree/master/hw1), [Repository Readme](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw1/README.md)
 		+ Keyword:
 			- Regression Problem
 			- Linear Regression
@@ -16,7 +16,7 @@
     		- Regularization
     - **HW2**: Income Predicition
     	+ [Kaggle Link](https://www.kaggle.com/c/ml-2017fall-hw2)
-    	+ [Repository](https://github.com/tainvecs/ml-2017/tree/master/hw2), [Repository Readme](https://github.com/tainvecs/ml-2017/blob/master/hw2/README.md)
+    	+ [Repository](https://github.com/tainvecs/MachineLearning-2017/tree/master/hw2), [Repository Readme](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw2/README.md)
     	+ Keyword
     		- Binary Classification
     		- Logistic Regression, Probabilistic Generative model
@@ -27,7 +27,7 @@
 			- Feature Normalization, standard score, min max, mean
 	- **HW3**: Image Sentiment Classification
     	+ [Kaggle Link](https://www.kaggle.com/c/ml-2017fall-hw3)
-    	+ [Repository](https://github.com/tainvecs/ml-2017/tree/master/hw3), [Repository Readme](https://github.com/tainvecs/ml-2017/blob/master/hw3/README.md)
+    	+ [Repository](https://github.com/tainvecs/MachineLearning-2017/tree/master/hw3), [Repository Readme](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw3/README.md)
     	+ Keyword
     		- Multi-class Classification
     		- Convolutional Neural Network
@@ -38,7 +38,7 @@
 			- Convolution Filter Visualization
 	- **HW4**: Text Sentiment Classification
     	+ [Kaggle Link](https://www.kaggle.com/c/ml-2017fall-hw4)
-    	+ [Repository](https://github.com/tainvecs/ml-2017/tree/master/hw4), [Repository Readme](https://github.com/tainvecs/ml-2017/blob/master/hw4/README.md)
+    	+ [Repository](https://github.com/tainvecs/MachineLearning-2017/tree/master/hw4), [Repository Readme](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/README.md)
     	+ Keyword
     		- Binary Classification
     		- Recurrent Neural Network, LSTM, GRU
