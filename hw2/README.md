@@ -7,7 +7,6 @@
 ## Maintainer Info
 * Chin-Ho, Lin
 * tainvecs@gmail.com
-* [GitLab](https://gitlab.com/tainvecs/MachineLearning-2017/)
 
 
 ## Overview

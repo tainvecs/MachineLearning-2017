@@ -8,7 +8,6 @@
 ## Maintainer Info
 * Chin-Ho, Lin
 * tainvecs@gmail.com
-* [GitLab](https://gitlab.com/tainvecs/MachineLearning-2017/)
 
 
 ## Outline
@@ -174,7 +173,7 @@ In homework 4, we are given twitter dataset with sentiment labels. By training R
     * We train LSTM model on "proc" labeled and pseudo labeled training data with best performed parameters in previous experiments.
     * |  |  |  |  |
         | :-: | :-: | :-: | :-: |
-        | <a href="https://www.codecogs.com/eqnedit.php?latex=cfd_{lower}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd_{lower}" title="cfd_{lower}" /></a> | <a href="https://www.codecogs.com/eqnedit.php?latex=cfd_{upper}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd_{upper}" title="cfd_{upper}" /></a> | **Validation Accuracy** | **Learning Curves** |
+        | **<a href="https://www.codecogs.com/eqnedit.php?latex=cfd" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd" title="cfd" /></a> lower bound** | **<a href="https://www.codecogs.com/eqnedit.php?latex=cfd" target="_blank"><img src="https://latex.codecogs.com/svg.latex?cfd" title="cfd" /></a> upper bound** | **Validation Accuracy** | **Learning Curves** |
         | 0.95 | 1.0 | 0.8336 | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.95/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
         | 0.7 | 1.0 | 0.8350 | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.7/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
         | 0.5 | 0.7 | 0.8406 | ![](https://github.com/tainvecs/MachineLearning-2017/blob/master/hw4/plot-semi/loss_acc_curves/cfd_0.5_0.7/val_0.1_seed_1234_epoch_20_batch_64_opt_adam_rnn_lstm_tanh_u_256_256_d_0.4_rd_0.4_dnn_swish_u_256_256_d_0.3_norm_True_w2v_cw_256_neg_5_ws_5_lr_0.1_epoch_30_ngram_3_char_3_6_thread_16.x_train.all.proc.loss_acc_curves.png?raw=true) |
